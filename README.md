@@ -6,4 +6,5 @@ To add it to chrome just go to chrome://extensions, click developer mode, click 
 
 # Special Thanks
 Ilze Greever for helping me bug-fix
+
 [Travis Krause](https://github.com/nwcell) for his [ics.js](https://github.com/nwcell/ics.js) library
