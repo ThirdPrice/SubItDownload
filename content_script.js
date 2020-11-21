@@ -4,12 +4,12 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     var calStatus = document.getElementsByClassName("fc-agendaWeek-view")[0];
     if (calStatus) {
-      sendResponse({response: "Processing"});
+      sendResponse({response: "success"});
       downloadICS(parseEvents(discoverEvents()));
     }
     else {
       //console.log("no week");
-      sendResponse({response: "Switch to week view"});
+      sendResponse({response: "failure"});
     }
   }
 );
