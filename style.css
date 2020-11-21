@@ -1,0 +1,58 @@
+.button {
+display: inline-block;
+border-radius: 4px;
+background-color: #FAA11A;
+border: none;
+color: #ffffff;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+cursor: pointer;
+margin: 5px;
+}
+
+.button span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.button span:after {
+content: '\21E9';
+position: absolute;
+opacity: 0;
+top: -5px;
+right: -31px;
+transition: 0.5s;
+}
+
+.button:hover span {
+padding-right: 40px;
+}
+
+.button:hover span:after {
+opacity: 1;
+right: 0;
+}
+
+.color-1 {
+    background-color: #5B9BCB;
+}
+
+.result {
+display: none;
+border-radius: 4px;
+background-color: #e65820;
+border: none;
+color: #FFFFFF;
+text-align: center;
+font-size: 20px;
+vertical-align: middle;
+padding: 20px;
+padding-top: 15px;
+width: 160px;
+margin: 5px;
+}
+  
