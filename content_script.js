@@ -32,7 +32,8 @@ function parseEvents(eventList) {
   var parsedEvents = [];
   var date = [];
   for (var i = 0; i < eventList.length; i++) {
-      if (eventList[i][0] != 'A' && eventList[i][0] != 'O') {
+      if (eventList[i][0] != 'A' && eventList[i][0] != 'O' && eventList[i][0] != null) {
+        console.log(eventList[i]);
         title = eventList[i].slice((eventList[i].indexOf(" in the position ") + 17), eventList[i].indexOf(" on ")) 
         unformattedDate = eventList[i].slice( eventList[i].indexOf(" on ") + 4, eventList[i].indexOf(",") ).split(" ");
         unformattedTime = eventList[i].slice( eventList[i].indexOf(", ") + 2, eventList[i].indexOf(".") );
@@ -49,8 +50,10 @@ function parseEvents(eventList) {
         time = [unformattedTime[0] + " " + unformattedTime[1], unformattedTime[3] + " " + unformattedTime[4]];
         if (time[1].indexOf("12:00 am") != -1) {
           splitDate = date[0].split("/");
+          console.log(splitDate);
           // HANDLE ADDING DAYS FOR END OF MONTH
           d = new Date(splitDate[2], parseInt(splitDate[0])-1, parseInt(splitDate[1])+1);
+          console.log(d);
           date[1] = d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear();
           time[1][(time[1].length)-2] = 'a';
         }

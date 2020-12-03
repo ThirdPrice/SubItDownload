@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     x = document.getElementById("result");
     checkPageButton.addEventListener('click', function() {  
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            if (tabs[0].url != "https://account.subitup.com/employee/default.aspx") {
+            if (tabs[0].url != "https://account.subitup.com/employee/default.aspx#" && tabs[0].url != "https://account.subitup.com/employee/default.aspx") {
+                console.log(tabs[0].url);
                 x.style.display = "inline-block";
                 x.innerText = "You must be on SubItUp.com!";
             }
